@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #out {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+<div id="out"></div>
+</body>
+<script>
+    // function f() {
+    //     setInterval("myFunction()", 6000);
+    // }
+    // function myFunction() {
+    //     let color = 0;
+    //     for (let i = 0; i <= 3; i++) {
+    //         if (color === 0) {
+    //             setTimeout("color('yellow')", 3000);
+    //             color = 1
+    //         } else if (color === 1) {
+    //             setTimeout("color('red')", 4000);
+    //             color = 2
+    //         } else if (color === 2) {
+    //             setTimeout("color('green')", 6000);
+    //             color = 0;
+    //         }
+    //     }
+    // }
+    // function color(e) {
+    //     document.getElementById('out').style.background = e
+    // }
+    // myFunction();
+    // f()
+
+    //
+    // changer();
+    // function changer1() {
+    //     setTimeout("document.getElementById('out').style.background = 'yellow'", 3000);
+    // }
+    // function changer2() {
+    //     setTimeout("document.getElementById('out').style.background = 'red'", 4000);
+    // }
+    // function changer3() {
+    //     setTimeout("document.getElementById('out').style.background = 'green'", 6000);
+    // }
+    // function changer() {
+    //     changer1();
+    //     changer2();
+    //     changer3();
+    // }
+    // timer();
+    // function timer() {
+    //     setInterval(() => changer(), 6000);
+    // }
+
+    function changeColor(duration) {
+        // return Promise.resolve(document.getElementById('out').style.background = color).then(function (e) {
+        //     setTimeout(e, duration);
+        // })
+        return new Promise(function (resolve) {
+            setTimeout(resolve, duration);
+        })
+    }
+
+    async function getColor(color, duration) {
+        document.getElementById('out').style.background = color;
+        await changeColor(duration)
+    }
+
+    async function main() {
+        while (true) {
+            await getColor('green', 3000);
+            await getColor('yellow', 1000);
+            await getColor('red', 2000);
+        }
+    }
+
+    main().then();
+
+
+</script>
+
+</html>

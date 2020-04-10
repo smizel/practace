@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>滚动条触底</title>
+
+    <style>
+        .wrapper{
+            width:500px;
+            height:500px;
+            border:1px solid #000;
+            text-align: center;
+            overflow:auto;
+        }
+
+        .info{
+            height:1200px;
+        }
+
+        .register{
+            margin-top: 20px;
+            margin-left: 180px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <h3>亲爱的，欢迎注册</h3>
+    <p  class="info">
+        亲爱的用户，请仔细阅读以下协议,如果你不仔细阅读，你就别注册
+    </p>
+</div>
+<div class="register">
+    <input type="checkbox" />我已阅读条例
+    <button id="submit" disabled>提交</button>
+</div>
+
+</body>
+
+<script>
+    var oWrapper = document.getElementsByClassName('wrapper')[0]
+    var oBtn = document.getElementById('submit')
+
+
+
+    oWrapper.onscroll = function(){
+
+        console.log(122)
+        // if(oWrapper.scrollHeight - oWrapper.scrollTop <= oWrapper.clientHeight){
+        //     oBtn.disabled = false
+        // }else{
+        //     oBtn.disabled = true
+        // }
+    }
+
+
+</script>
+</html>

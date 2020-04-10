@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>给你一朵烟花~</title>
+    <style>
+
+        @keyframes one {
+            0% {
+                background: #ff90d0;
+                top: 60px;
+                left: 0;
+            }
+            20% {
+                background: #ff9389;
+                top: 50px;
+                left: -8px;
+            }
+            40% {
+                background: #ff5b5a;
+                top: 30px;
+                left: -20px;
+            }
+            60% {
+                background: #ff9543;
+                top: 0;
+                left: -60px;
+            }
+            80% {
+                background: #ffd026;
+                top: -40px;
+                left: -100px;
+
+            }
+            100% {
+                background: #ff90d0;
+                top: -90px;
+                left: -150px;
+            }
+        }
+
+        @keyframes two {
+            0% {
+                background: #ff90d0;
+                top: 30px;
+                left: 0;
+            }
+            20% {
+                background: #ff9389;
+                top: 20px;
+                left: -4px;
+            }
+            40% {
+                background: #ff5b5a;
+                top: 0;
+                left: -10px;
+            }
+            60% {
+                background: #ff9543;
+                top: -30px;
+                left: -30px;
+            }
+            80% {
+                background: #ffd026;
+                top: -70px;
+                left: -60px;
+
+            }
+            100% {
+                background: #ff90d0;
+                top: -120px;
+                left: -100px;
+            }
+        }
+
+        @keyframes three {
+            0% {
+                background: #ff90d0;
+                top: 0;
+            }
+            20% {
+                background: #ff9389;
+                top: -10px;
+            }
+            40% {
+                background: #ff5b5a;
+                top: -30px;
+            }
+            60% {
+                background: #ff9543;
+                top: -60px;
+            }
+            80% {
+                background: #ffd026;
+                top: -100px;
+
+            }
+            100% {
+                background: #ff90d0;
+                top: -150px;
+                width: 100px;
+                height: 100px;
+                transform: rotateX(180deg);
+                -webkit-transform: rotateX(180deg)
+            }
+        }
+
+        @keyframes four {
+            0% {
+                background: #ff90d0;
+                top: -30px;
+                left: 0;
+            }
+            20% {
+                background: #ff9389;
+                top: -40px;
+                left: 4px;
+            }
+            40% {
+                background: #ff5b5a;
+                top: -60px;
+                left: 10px;
+            }
+            60% {
+                background: #ff9543;
+                top: -90px;
+                left: 30px;
+            }
+            80% {
+                background: #ffd026;
+                top: -130px;
+                left: 60px;
+
+            }
+            100% {
+                background: #ff90d0;
+                top: -180px;
+                left: 100px;
+            }
+        }
+
+        @keyframes five {
+            0% {
+                background: #ff90d0;
+                top: -60px;
+                left: 0;
+            }
+            20% {
+                background: #ff9389;
+                top: -70px;
+                left: 8px;
+            }
+            40% {
+                background: #ff5b5a;
+                top: -90px;
+                left: 20px;
+            }
+            60% {
+                background: #ff9543;
+                top: -120px;
+                left: 60px;
+            }
+            80% {
+                background: #ffd026;
+                top: -160px;
+                left: 100px;
+
+            }
+            100% {
+                background: #ff90d0;
+                top: -210px;
+                left: 150px;
+            }
+        }
+
+        .out {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .fire {
+            width: 30px;
+            height: 30px;
+            background: #ff90d0;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #one {
+            animation: one 5s linear 0s infinite;
+            top: 60px;
+        }
+
+        #two {
+            animation: two 5s linear 0s infinite;
+            top: 30px;
+        }
+
+        #three {
+            animation: three 5s linear 0s infinite;
+            /*transition: width 5s, height 5s, transform 5s;*/
+
+        }
+
+        #four {
+            animation: four 5s linear 0s infinite;
+            top: -30px;
+        }
+
+        #five {
+            animation: five 5s linear 0s infinite;
+            top: -60px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="out">
+    <div class="fire" id="one"></div>
+    <div class="fire" id="two"></div>
+    <div class="fire" id="three"></div>
+    <div class="fire" id="four"></div>
+    <div class="fire" id="five"></div>
+</div>
+
+</body>
+</html>
