@@ -15,3 +15,25 @@ function echoArr2(arr, i = 0) {
     }
 
 }
+
+
+// 大数相加
+
+function addBig(num1, num2) {
+
+    const a = num1.toString().split('').reverse().join('');
+    const b = num2.toString().split('').reverse().join('');
+
+    const length = a.length > b.length ? a.length : b.length;
+    let cont = 0;
+    let num = 0;
+
+    for (let i = 0; i < length; i++) {
+        let add = (+a[i] || 0) + (+b[i] || 0);
+        cont += add;
+        cont /= 10;
+        num++;
+    }
+
+    return Math.round(cont * Math.pow(10, num))
+}
