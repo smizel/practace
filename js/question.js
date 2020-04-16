@@ -37,3 +37,21 @@ function addBig(num1, num2) {
 
     return Math.round(cont * Math.pow(10, num))
 }
+
+function sumBig(num1, num2) {
+
+    const a = num1.toString().split('');
+    const b = num2.toString().split('');
+
+    let cont = 0;
+    let num = 0;
+
+    while (a.length || b.length) {
+        let add = (+a.pop() || 0) + (+b.pop() || 0);
+        cont += add;
+        cont /= 10;
+        num++;
+    }
+
+    return Math.round(cont * Math.pow(10, num))
+}
