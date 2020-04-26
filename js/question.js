@@ -55,3 +55,21 @@ function sumBig(num1, num2) {
 
     return Math.round(cont * Math.pow(10, num))
 }
+
+// 约瑟夫环问题,得出最后留下的人
+function LastRemaining_Solution(n, m) {
+    if (n < 1 || m < 1) {
+        return -1;
+    } else {
+        return joseoh(n, m);
+    }
+
+}
+
+function joseoh(n, m) {
+    if (n === 1) {
+        return 0;
+    }
+    return (joseoh(n - 1, m) + m) % n;
+}
+
