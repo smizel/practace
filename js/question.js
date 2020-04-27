@@ -73,3 +73,35 @@ function joseoh(n, m) {
     return (joseoh(n - 1, m) + m) % n;
 }
 
+function jumpFloor(number)
+{
+    if(number<=2){
+        return number;
+    }
+    let i = 2;
+    let pre = 1;
+    let current = 2;
+    let result = 0;
+    while(i++ < number){
+        result = pre + current;
+        pre = current;
+        current = result;
+    }
+    return result;
+}
+
+function Fibonacci(n){
+    if(n<=1){
+        return n;
+    }
+    let i = 1;
+    let pre = 0;
+    let current = 1;
+    let result = 0;
+    while(i++ < n){
+        result = pre + current;
+        pre = current;
+        current = result;
+    }
+    return result;
+}
