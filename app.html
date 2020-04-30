@@ -4,47 +4,96 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <style>
+        /*.out {*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*    background: #1890ff;*/
+        /*    text-align: center;*/
+        /*    position: absolute;*/
+        /*}*/
+
+        /*.inner {*/
+        /*    width: 50px;*/
+        /*    height: 50px;*/
+        /*    background: #ff90d0;*/
+        /*    display: inline-block;*/
+
+        /*    position: absolute;*/
+        /*    top: 0;*/
+        /*    bottom: 0;*/
+        /*    left: 0;*/
+        /*    right: 0;*/
+        /*    margin: auto;*/
+
+        /*}*/
 
 
+        /*.out {*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*    background: #1890ff;*/
+        /*    display: table;*/
+        /*    text-align: center;*/
+
+        /*}*/
+
+        /*.inner {*/
+        /*    display: table-cell;*/
+        /*    vertical-align: middle;*/
+        /*}*/
+
+        .out {
+            width: 400px;
+            height: 200px;
+            background: #1890ff;
+            position: absolute;
+        }
+
+        .inner1 {
+            width: 100px;
+            height: 200px;
+            background: #ffeda9;
+            position: absolute;
+            left: 0;
+        }
+
+        .inner2 {
+            width: calc(100% - 200px);
+            height: 200px;
+            background: #cb302b;
+            margin: 0 100px;
+        }
+
+        .inner3 {
+            width: 100px;
+            height: 200px;
+            background: #a3e0d1;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+    </style>
 </head>
 <body>
+
+<div class="out">
+    <div class="inner">
+
+    </div>
+</div>
+
+
+<div class="out">
+    <div class="inner1"></div>
+    <div class="inner2"></div>
+    <div class="inner3"></div>
+</div>
 
 
 </body>
 
-<script>
-    function deep(data, list = new WeakMap()) {
-        if (typeof data === 'object') {
-            if (list.has(data)) {
-                return list.get(data)
-            }
-            if (Array.isArray(data)) {
-                let newArr = [];
-                list.set(data, newArr);
-                data.map(e => {
-                    const val = (typeof e === 'object') ? deep(e, list) : e;
-                    newArr.push(val)
-                });
-                return newArr;
-            } else {
-                if (data) {
-                    let newObj = {};
-                    list.set(data, newObj);
-                    for (let key in data) {
-                        const val = deep(data[key], list);
-                        newObj[key] = val;
-                    }
-                    return newObj;
-                } else {
-                    return data;
-                }
-            }
-        } else {
-            return data
-        }
-    }
-
-</script>
 </html>
 
 

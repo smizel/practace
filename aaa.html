@@ -44,7 +44,7 @@
 </div>
 </body>
 <script>
-    function retry(job: () => void, time = 0) {
+    function retry(job, time = 0) {
         return (async function () {
             try {
                 const resp = await job();

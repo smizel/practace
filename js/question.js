@@ -90,6 +90,9 @@ function jumpFloor(number)
     return result;
 }
 
+/**
+ * @return {number}
+ */
 function Fibonacci(n){
     if(n<=1){
         return n;
@@ -104,4 +107,36 @@ function Fibonacci(n){
         current = result;
     }
     return result;
+}
+
+
+function deep(data, list = new WeakMap()) {
+    if (typeof data === 'object') {
+        if (list.has(data)) {
+            return list.get(data)
+        }
+        if (Array.isArray(data)) {
+            let newArr = [];
+            list.set(data, newArr);
+            data.map(e => {
+                const val = (typeof e === 'object') ? deep(e, list) : e;
+                newArr.push(val)
+            });
+            return newArr;
+        } else {
+            if (data) {
+                let newObj = {};
+                list.set(data, newObj);
+                for (let key in data) {
+                    const val = deep(data[key], list);
+                    newObj[key] = val;
+                }
+                return newObj;
+            } else {
+                return data;
+            }
+        }
+    } else {
+        return data
+    }
 }
